@@ -5,7 +5,9 @@ import torch.nn as nn
 
 from timm.models.efficientnet import EfficientNet
 from timm.models.efficientnet import decode_arch_def, round_channels, default_cfgs
+#NOTE: timm.models.layers is DEPRECATED https://github.com/huggingface/pytorch-image-models/blob/main/timm/models/layers/__init__.py
 from timm.models.layers.activations import Swish
+#from timm.layers.activations import Swish
 
 from ._base import EncoderMixin
 
@@ -149,8 +151,8 @@ def prepare_settings(settings):
         "input_range": (0, 1),
         "input_space": "RGB",
     }
-
-
+#import pprint
+#pprint.pprint(default_cfgs["tf_efficientnet_b0"])
 timm_efficientnet_encoders = {
 
     "timm-efficientnet-b0": {
